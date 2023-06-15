@@ -21,15 +21,18 @@ namespace WCS_projet_1
             switch (choice)
             {
                 case "1":
-                    ListCourses();
+                    ListStudents();
                     break;
                 case "2":
-                    AddCourse();
+                    CreateStudent();
                     break;
                 case "3":
-                    RemoveCourse();
+                    ViewStudent();
                     break;
                 case "4":
+                    AddGradeToStudent();
+                    break;
+                case "5":
                     exitMenu = true;
                     break;
                 default:
@@ -41,7 +44,6 @@ namespace WCS_projet_1
         }
     }
 
-    // Placeholder methods for menu actions
     public void ListStudents()
     {
         Console.WriteLine("List of students");
