@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace WCS_projet_1
 {
@@ -64,4 +65,5 @@ namespace WCS_projet_1
         Console.WriteLine("Add a grade and appreciation for a course on an existing student");
     }
     
+    //fonction à implémenter
 }

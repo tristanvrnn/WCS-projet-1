@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace WCS_projet_1
 {
@@ -58,4 +59,5 @@ namespace WCS_projet_1
         Console.WriteLine("Deletition of a course by his identifier");
     }
     
+    //fonction à implémenter
 }
