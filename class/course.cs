@@ -7,8 +7,8 @@ public class Course
 
         public Course(int id, string name)
     {
-        Id = id;
-        Name = name;
+        numericID = id;
+        courseName = name;
     }
     
 }

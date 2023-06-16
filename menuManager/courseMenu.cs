@@ -42,7 +42,6 @@ namespace WCS_projet_1
             Console.WriteLine();
         }
     }
-    }
 
     public void ListCourses()
     {
@@ -60,4 +59,5 @@ namespace WCS_projet_1
     }
     
     //fonction à implémenter
+}
 }

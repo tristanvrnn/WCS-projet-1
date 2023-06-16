@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public class Student
 {
@@ -27,5 +28,4 @@ public class Student
         double average = sum/grade.count;
         return Math.Round(average, 2);
     }
-
 }
