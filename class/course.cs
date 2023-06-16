@@ -1,14 +1,17 @@
 using System;
 
+namespace WCS_projet_1 
+{
 public class Course 
 {
-    public int numericID { get; set; }
+    public int courseID { get; set; }
     public string courseName { get; set; }
 
         public Course(int id, string name)
     {
-        numericID = id;
+        courseID = id;
         courseName = name;
     }
     
+}
 }

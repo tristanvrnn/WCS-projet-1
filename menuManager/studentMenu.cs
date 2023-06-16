@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using WCS_projet_1;
 
 namespace WCS_projet_1
 {
     public class studentMenu
     {
-    public void ShowStudentoMenu()
+        public static List<Student> students = new List<Student>();
+    public void ShowStudentMenu()
     {
         bool exitMenu = false;
 
@@ -52,13 +54,12 @@ namespace WCS_projet_1
     {
         Console.WriteLine("List of Students:");
         Console.WriteLine(" ");
-        
-        List<Student> students = new List<Student>();
 
         if(students != null)
         foreach (Student student in students)
         {
-            Console.WriteLine("ID: " + numericID + ", " + "Name: " + firstName + lastName + ".");
+            Console.WriteLine("ID: " + student.studentID + ", " + "Name: " + student.firstName + student.lastName + ".");
+            Console.WriteLine(" ");
         }
         else 
         {
@@ -72,7 +73,7 @@ namespace WCS_projet_1
         Console.WriteLine("Enter student infos:");
         Console.WriteLine(" ");
 
-        Console.Write("numericID: ");
+        Console.Write("studentID: ");
         int numericId = int.Parse(Console.ReadLine());
 
         Console.Write("first Name: ");
@@ -85,7 +86,7 @@ namespace WCS_projet_1
         DateTime birthdate = DateTime.Parse(Console.ReadLine());
         Console.WriteLine(" ");
 
-        Student student = new Student(numericId, firstName, lastName, birthdate);
+        Student student = new Student();
         students.Add(student);
 
         Console.WriteLine("Student " + firstName + " " + lastName + " added successfully.");
@@ -95,14 +96,15 @@ namespace WCS_projet_1
     public static void ViewStudent()
     {
         Console.Write("Enter student ID: ");
-        int numericId = int.Parse(Console.ReadLine());
+        int studentID = int.Parse(Console.ReadLine());
         Console.WriteLine(" ");
 
+        Student student = students.Find(item=>item.studentID==studentID);
         if (student != null)
         {
-            Console.WriteLine("ID: " + numericID);
-            Console.WriteLine("Name: " + firstName + lastName);
-            Console.WriteLine("Birthdate: " + birthdate);
+            Console.WriteLine("ID: " + student.studentID);
+            Console.WriteLine("Name: " + student.firstName + student.lastName);
+            Console.WriteLine("Birthdate: " + student.birthdate);
             Console.WriteLine(" ");
         }
         else
@@ -115,9 +117,10 @@ namespace WCS_projet_1
     public static void AddGradeToStudent() 
     {
         Console.Write("Enter student ID: ");
-        int id = int.Parse(Console.ReadLine());
+        int studentID = int.Parse(Console.ReadLine());
         Console.WriteLine(" ");
 
+        Student student = students.Find(item=>item.studentID==studentID);
         if (student != null)
         {
             Console.Write("Enter course name: ");
@@ -128,8 +131,8 @@ namespace WCS_projet_1
             string appreciation = Console.ReadLine();
             Console.WriteLine(" ");
 
-            Grade newGrade = new Grade(subject, value, appreciation);
-            Grades.Add(newGrade);
+            Grade newGrade = new Grade();
+            student.grades.Add(newGrade);
 
             Console.WriteLine("Grade added successfully.");
             Console.WriteLine(" ");

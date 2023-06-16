@@ -5,7 +5,7 @@ namespace WCS_projet_1
 {
     public class courseMenu
     {
-            private void ShowCoursesMenu()
+            public void ShowCourseMenu()
     {
         bool exitMenu = false;
 
@@ -15,7 +15,8 @@ namespace WCS_projet_1
             Console.WriteLine("1. List existing courses");
             Console.WriteLine("2. Add a new course to the program");
             Console.WriteLine("3. Remove a course by its identifier");
-            Console.WriteLine("4. Back to main menu");
+            Console.WriteLine("4. Come back to main menu");
+            Console.WriteLine(" ");
             Console.Write("Choice: ");
 
             string choice = Console.ReadLine();
@@ -39,7 +40,7 @@ namespace WCS_projet_1
                     break;
             }
 
-            Console.WriteLine();
+            Console.WriteLine(" ");
         }
     }
 

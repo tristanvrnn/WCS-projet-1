@@ -1,4 +1,5 @@
 using System;
+using WCS_projet_1;
 
 namespace WCS_projet_1
 {
@@ -8,6 +9,8 @@ namespace WCS_projet_1
     {
         bool exitMenu = false;
 
+        courseMenu courses = new courseMenu();
+        studentMenu students = new studentMenu();
         while (!exitMenu)
         {
             Console.WriteLine("--- Main menu ---");
@@ -21,10 +24,10 @@ namespace WCS_projet_1
             switch (choice)
             {
                 case "1":
-                    ShowStudentMenu();
+                    students.ShowStudentMenu();
                     break;
                 case "2":
-                    ShowCourseMenu();
+                    courses.ShowCourseMenu();
                     break;
                 case "3":
                     exitMenu = true;
