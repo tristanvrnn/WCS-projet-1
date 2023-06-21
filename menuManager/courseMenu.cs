@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using WCS_projet_1;
 
 namespace WCS_projet_1
 {
     public class courseMenu
     {
+        public static List<Course> courses = new List<Course>();
             public void ShowCourseMenu()
     {
         bool exitMenu = false;
@@ -44,21 +46,58 @@ namespace WCS_projet_1
         }
     }
 
-    public void ListCourses()
-    {
-        Console.WriteLine("List of existing course");
-    }
 
-    public void AddCourse()
-    {
-        Console.WriteLine("Addition of a new course to the program");
-    }
+        public void ListCourses()
+        {
+            Console.WriteLine("List of Courses: ");
+            Console.WriteLine();
 
-    public void RemoveCourse()
-    {
-        Console.WriteLine("Deletition of a course by his identifier");
-    }
-    
-    //fonction à implémenter
+            if (courses.Count > 0)
+            {
+                foreach (Course course in courses)
+                {
+                    Console.WriteLine("ID: " + course.courseID + ", Name: " + course.courseName);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No courses found.");
+            }
+        }
+
+        public void AddCourse()
+        {
+            Console.WriteLine("Enter course details:");
+            Console.WriteLine();
+
+            Console.Write("ID: ");
+            int id = int.Parse(Console.ReadLine());
+
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+
+            Course course = new Course(id, name);
+            courses.Add(course);
+
+            Console.WriteLine("Course added successfully.");
+        }
+
+        public void RemoveCourse()
+        {
+            Console.Write("Enter the ID of the course to remove: ");
+            int id = int.Parse(Console.ReadLine());
+
+            Course courseToRemove = courses.Find(course => course.courseID == id);
+
+            if (courseToRemove != null)
+            {
+                courses.Remove(courseToRemove);
+                Console.WriteLine("Course removed successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Course not found.");
+            }
+        }
 }
 }

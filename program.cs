@@ -1,4 +1,5 @@
-﻿namespace WCS_projet_1;
+﻿using System;
+namespace WCS_projet_1;
 
 class Program
 {
