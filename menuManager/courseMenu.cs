@@ -70,13 +70,20 @@ namespace WCS_projet_1
             Console.WriteLine("Enter course details:");
             Console.WriteLine();
 
-            Console.Write("ID: ");
-            int id = int.Parse(Console.ReadLine());
+                    int courseID;
+                    if(courses.Count == 0)
+                    {
+                        courseID = 0;
+                    }
+                    else
+                    {
+                        courseID = courses[courses.Count-1].courseID + 1;    // LAST ID + 1
+                    }
 
             Console.Write("Name: ");
             string name = Console.ReadLine();
 
-            Course course = new Course(id, name);
+            Course course = new Course(courseID, name);
             courses.Add(course);
 
             Console.WriteLine("Course added successfully.");

@@ -58,7 +58,7 @@ namespace WCS_projet_1
         if(students != null)
         foreach (Student student in students)
         {
-            Console.WriteLine("ID: " + student.studentID + ", " + "Name: " + student.firstName + student.lastName + ".");
+            Console.WriteLine("ID: " + student.studentID + ", " + "Name: " + student.firstName  + " " +  student.lastName + ".");
             Console.WriteLine(" ");
         }
         else 
@@ -74,7 +74,16 @@ namespace WCS_projet_1
         Console.WriteLine(" ");
 
         Console.Write("studentID: ");
-        int numericId = int.Parse(Console.ReadLine());
+        int studentID;
+        if(students.Count == 0)
+                    {
+                        studentID = 0;
+                    }
+                    else
+                    {
+                        studentID = students[students.Count-1].studentID + 1;    // LAST ID + 1
+                    }
+
 
         Console.Write("first Name: ");
         string firstName = Console.ReadLine();
@@ -82,11 +91,17 @@ namespace WCS_projet_1
         Console.Write("last Name: ");
         string lastName = Console.ReadLine();
 
-        Console.Write("birthdate (yyyy-MM-dd): ");
+        Console.Write("birthdate (yyyy/MM/dd): ");
         DateTime birthdate = DateTime.Parse(Console.ReadLine());
         Console.WriteLine(" ");
 
-        Student student = new Student();
+            Student student = new Student
+    {
+        studentID = studentID,
+        firstName = firstName,
+        lastName = lastName,
+        birthdate = birthdate
+    };
         students.Add(student);
 
         Console.WriteLine("Student " + firstName + " " + lastName + " added successfully.");
@@ -103,13 +118,13 @@ namespace WCS_projet_1
         if (student != null)
         {
             Console.WriteLine("ID: " + student.studentID);
-            Console.WriteLine("Name: " + student.firstName + student.lastName);
+            Console.WriteLine("Name: " + student.firstName + " " + student.lastName);
             Console.WriteLine("Birthdate: " + student.birthdate);
             Console.WriteLine(" ");
         }
         else
         {
-            Console.WriteLine("Error : student not found.");
+            Console.WriteLine("No student");
             Console.WriteLine(" ");
         }
     }
@@ -139,7 +154,7 @@ namespace WCS_projet_1
         }
         else
         {
-            Console.WriteLine("Error : student not found.");
+            Console.WriteLine("No student found");
             Console.WriteLine(" ");
         }
     }
