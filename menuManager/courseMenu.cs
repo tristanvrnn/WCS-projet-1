@@ -13,7 +13,8 @@ namespace WCS_projet_1
 
         while (!exitMenu)
         {
-            Console.WriteLine("--- Courses Menu ---");
+            Console.WriteLine("----- Courses Menu -----");
+            Console.WriteLine(" ");
             Console.WriteLine("1. List existing courses");
             Console.WriteLine("2. Add a new course to the program");
             Console.WriteLine("3. Remove a course by its identifier");
@@ -22,6 +23,7 @@ namespace WCS_projet_1
             Console.Write("Choice: ");
 
             string choice = Console.ReadLine();
+            Console.WriteLine(" ");
 
             switch (choice)
             {
@@ -68,7 +70,7 @@ namespace WCS_projet_1
         public void AddCourse()
         {
             Console.WriteLine("Enter course details:");
-            Console.WriteLine();
+            Console.WriteLine(" ");
 
                     int courseID;
                     if(courses.Count == 0)
@@ -77,7 +79,7 @@ namespace WCS_projet_1
                     }
                     else
                     {
-                        courseID = courses[courses.Count-1].courseID + 1;    // LAST ID + 1
+                        courseID = courses[courses.Count-1].courseID + 1;
                     }
 
             Console.Write("Name: ");

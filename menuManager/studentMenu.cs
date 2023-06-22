@@ -13,7 +13,8 @@ namespace WCS_projet_1
 
         while (!exitMenu)
         {
-            Console.WriteLine("--- Student menu ---");
+            Console.WriteLine("----- Student menu -----");
+            Console.WriteLine(" ");
             Console.WriteLine("1. List student");
             Console.WriteLine("2. Create student");
             Console.WriteLine("3. Consult existing student");
@@ -23,6 +24,7 @@ namespace WCS_projet_1
             Console.WriteLine("Choice : ");
 
             string choice = Console.ReadLine();
+            Console.WriteLine(" ");
 
             switch (choice)
             {
@@ -81,7 +83,7 @@ namespace WCS_projet_1
                     }
                     else
                     {
-                        studentID = students[students.Count-1].studentID + 1;    // LAST ID + 1
+                        studentID = students[students.Count-1].studentID + 1;
                     }
 
 

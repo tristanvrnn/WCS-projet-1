@@ -13,13 +13,16 @@ namespace WCS_projet_1
         studentMenu students = new studentMenu();
         while (!exitMenu)
         {
-            Console.WriteLine("--- Main menu ---");
+            Console.WriteLine("----- Main menu -----");
+            Console.WriteLine(" ");
             Console.WriteLine("1. Student menu");
             Console.WriteLine("2. Course menu");
             Console.WriteLine("3. Exit");
+            Console.WriteLine(" ");
             Console.Write("Choice : ");
 
             string choice = Console.ReadLine();
+            Console.WriteLine(" ");
 
             switch (choice)
             {
