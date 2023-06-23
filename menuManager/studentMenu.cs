@@ -102,9 +102,12 @@ namespace WCS_projet_1
         studentID = studentID,
         firstName = firstName,
         lastName = lastName,
-        birthdate = birthdate
+        birthdate = birthdate,
+        grades = new List<Grade>()
     };
         students.Add(student);
+
+        dataManager.WriteJsonFile();
 
         Console.WriteLine("Student " + firstName + " " + lastName + " added successfully.");
         Console.WriteLine(" ");
@@ -150,6 +153,8 @@ namespace WCS_projet_1
 
             Grade newGrade = new Grade();
             student.grades.Add(newGrade);
+
+            dataManager.WriteJsonFile();
 
             Console.WriteLine("Grade added successfully.");
             Console.WriteLine(" ");

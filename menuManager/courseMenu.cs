@@ -88,6 +88,8 @@ namespace WCS_projet_1
             Course course = new Course(courseID, name);
             courses.Add(course);
 
+            dataManager.WriteJsonFile();
+
             Console.WriteLine("Course added successfully.");
         }
 
@@ -101,6 +103,8 @@ namespace WCS_projet_1
             if (courseToRemove != null)
             {
                 courses.Remove(courseToRemove);
+
+                dataManager.WriteJsonFile();
                 Console.WriteLine("Course removed successfully.");
             }
             else
